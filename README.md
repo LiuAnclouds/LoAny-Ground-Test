@@ -114,7 +114,7 @@
 
 **scene_text** — 软件界面场景文字（平均 352.4 框/张，文字检测能力极强）
 
-![scene_text](04_text_ocr/scene_text/scene_text_000_result.jpg)
+![scene_text](04_text_ocr/scene_text/scene_text_002_result.jpg)
 
 ### ⚠️ 一般结果
 
