@@ -133,8 +133,8 @@
 | 类别 | 图片数 | 检测框 | 平均 | 速度 |
 |------|--------|--------|------|------|
 | document_en | 50 | 110 | 2.20 | 0.70s |
-| document_cn | 31 | 28 | 0.90 | 0.32s |
-| invoice_form | 50 | 26 | 0.52 | 0.34s |
+| document_cn | 31 | 28 | 0.90 | 0.32s | ⚠️ 部分 |
+| invoice_form | 50 | 26 | 0.52 | 0.34s | ⚠️ 部分 |
 
 ### ✅ 优秀结果
 
@@ -144,11 +144,11 @@
 
 ### ⚠️ 较差结果
 
-**invoice_form** — 发票表单（平均 0.52 框/张，发票元素检测率偏低）
+**invoice_form** — 发票表单（模型准确检测到 table 元素，prompt 要求 4 元素只识别 1 个）
 
 ![invoice_form](05_layout_grounding/invoice_form/invoice_form_000_result.jpg)
 
-**document_cn** — 中文文档版面（平均 0.9 框/张）
+**document_cn** — 中文文档版面（模型准确检测到部分元素，prompt 要求 4 元素识别有限）
 
 ![document_cn](05_layout_grounding/document_cn/document_cn_000_result.jpg)
 
@@ -192,7 +192,7 @@
 - **GUI 定位**: 3B 模型在真实软件截图上无法定位指定 UI 元素（prompt 模糊 + 模型能力不足）
 - **bicycle 检测**: 数据集含大量汽车/摩托车负样本，模型准确区分未误检（11 个正样本全对）
 - **中文文档**: 检测率偏低，可能与字体/数据集有关
-- **发票表单**: 平均 0.52 框/张，元素识别能力有限
+- **发票表单**: 准确检测 table 元素，但 prompt 要求多元素时识别有限
 - **点定位**: prompt 模糊时定位精度下降
 
 ### 整体评价
